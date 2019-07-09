@@ -68,9 +68,9 @@ title = 'Average temperatures from ' + sys.argv[2] + ' to ' + sys.argv[3] + ', '
 plt.title(title)
 plt.xlabel('Year')
 plt.ylabel('Average temperature (K)')
-plt.plot(monthTime, monthlyAverages, label = 'monthly averages')
-plt.plot(yearTime, yearlyAverages, label = 'yearly averages')
-plt.plot(decadeTime, decadeAverages, label = 'averages per decade')
+plt.plot(monthTime, monthlyAverages, label = 'monthly averages', color = 'cyan')
+plt.plot(yearTime, yearlyAverages, label = 'yearly averages', linewidth=2, color = 'green')
+plt.plot(decadeTime, decadeAverages, label = 'averages per decade', linewidth=3, color = 'blue')
 
 
 plt.legend()
