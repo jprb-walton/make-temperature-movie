@@ -27,7 +27,7 @@ def create_video():
 def myload():
     cubes = iris.cube.CubeList([])
     
-    for i in range(1, 2, 3):
+    for i in range(1, 11, 3):
         tempfile = 'tpr_1850/bc179a.pj1850' + str("{:02d}".format(i)) + '01.nc'
         blockcube = iris.load_cube(tempfile)    
         cubes.append(blockcube)
@@ -45,9 +45,7 @@ def main():
 
     # Set the limits for the loop over years.  
     minTime = 0
-    maxTime = 90
-
-    
+    maxTime = 360
     
     for time in range(minTime, maxTime):
 
