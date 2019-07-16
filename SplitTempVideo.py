@@ -57,8 +57,8 @@ def create_video():
     #creating the video
     print "Converting images to movie..."
     options = ("-r 5 -vcodec png -y -i " 
-             + "image-%04d.png -r 5 -vcodec msmpeg4v2 -qblur 0.01 -qscale 5 ")
-    SpawnCommand("ffmpeg " + options + "split.avi")
+             + "split/image-%04d.png -r 5 -vcodec msmpeg4v2 -qblur 0.01 -qscale 5 ")
+    SpawnCommand("ffmpeg " + options + "split/split.avi")
 
 
 def main():
@@ -169,7 +169,7 @@ def main():
        
         # Now save the plot in an image file.  The files are numbered sequentially, starting
         # from 000.png; this is so that the ffmpeg command can grok them.
-        filename = "image-%04d.png" % time
+        filename = "split/image-%04d.png" % time
         plt.savefig(filename, dpi=200)
         
         # Discard the figure (otherwise the text will be overwritten
