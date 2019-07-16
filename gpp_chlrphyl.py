@@ -56,10 +56,12 @@ def main():
     # Set the limits for the loop over years.  
     minTime = 0
     maxTime = 360
-
     
-    
+    fileIndex = 0
     for time in range(minTime, maxTime):
+        print time
+        if time in [12, 310, 320, 347, 351, 354]: 
+	   continue
 
         # Contour plot the temperatures and add the coastline.
         
@@ -84,7 +86,8 @@ def main():
        
         # Now save the plot in an image file.  The files are numbered sequentially, starting
         # from 000.png; this is so that the ffmpeg command can grok them.
-        filename = "image2-%04d.png" % time
+        filename = "image2-%04d.png" % fileIndex
+	fileIndex += 1
         plt.savefig(filename, bbox_inches='tight', pad_inches=0)
         
         # Discard the figure (otherwise the text will be overwritten
